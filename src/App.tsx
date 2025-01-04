@@ -3,10 +3,12 @@ import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import ProjectCard from './components/ProjectCard';
 import NavLink from './components/NavLink';
 import LoadingScreen from './components/LoadingScreen';
+import MouseTrail from './components/MouseTrail';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,9 +25,22 @@ function App() {
   }
 
   return (
+    <div className="min-h-screen bg-zinc-950 text-white">
+      <MouseTrail />
+      <AppContent contentVisible={contentVisible} />
+    </div>
+  );
+}
+
+function AppContent({ contentVisible }: { contentVisible: boolean }) {
+  if (!contentVisible) {
+    return null;
+}
+
+  return (
     <div className={`min-h-screen bg-zinc-950 text-white transition-opacity duration-1000 ${contentVisible ? 'opacity-100' : 'opacity-0'}`}>
       {/* Hero Section */}
-      <header className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <header className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden z-0">
         <nav className="absolute top-0 left-0 right-0 p-6">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold">LA</h1>
@@ -64,10 +79,12 @@ function App() {
           </div>
         </div>
         
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div id="scroll-down" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce  text-zinc-400 hover:text-white transition-colors duration-200 ">
           <ChevronDown size={32} />
         </div>
       </header>
+
+
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -75,7 +92,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard 
             title="E-Commerce Platform"
-            description="Designed and developed an e-commerce platform using Bootstrap templates."
+            description="Designed and developed an e-commerce platform using Bootstrap."
             image="./images/hardbyte.jpg"
             tech={['Javascript', 'HTML', 'CSS', 'Bootstrap']}
             demoUrl="https://hardbyte.vercel.app/index.html"
@@ -83,17 +100,17 @@ function App() {
           />
           <ProjectCard 
             title="Psychologist Portfolio"
-            description="Designed and developed a Portfolio website for a psychologist made with Next.js and shadCn."
+            description="This is my first professional project in CoderCraft: I Designed and developed a Landing Portfolio website for a psychologist made with React, integrating Formspree API for the contact form."
             image="./images/psico.jpg"
-            tech={['Next.js', 'Typescript', 'Tailwind CSS', 'shadCn']}
-            demoUrl="https://hardbyte.vercel.app/index.html"
+            tech={['React', 'Tailwind CSS']}
+            demoUrl="https://www.lucianabahr-psico.com/"
             githubUrl="https://github.com/luciomrod/ivon-landing"
           />
                     <ProjectCard 
             title="Branca Real Estate"
             description="Designed and developed a real estate website with using Bootstrap, HTML, and CSS."
             image="./images/inmobiliaria.jpg"
-            tech={['HTML', 'CSS']}
+            tech={['HTML', 'CSS', 'Bootstrap']}
             demoUrl="https://branca-inmobiliaria.vercel.app/"
             githubUrl="https://github.com/luciomrod/branca-inmobiliaria"
           />
@@ -101,15 +118,8 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-zinc-900 rounded-lg shadow-2xl text-zinc-300 relative overflow-hidden md:rounded-3xl md:shadow-3xl md:bg-zinc-950">
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img 
-              src="./images/lucio.jpg" 
-              alt="Profile"
-              className="rounded-lg shadow-2xl"
-            />
-          </div>
           <div className="space-y-6">
             <h2 className="text-4xl font-bold">About Me</h2>
             <p className="text-zinc-300">
@@ -119,7 +129,7 @@ function App() {
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <h3 className="font-semibold">Tech Stack</h3>
+                <h3 className=" text-xl font-semibold">Tech Stack</h3>
                 <ul className="text-zinc-400">
                   <li>React & Next.js</li>
                   <li>TypeScript</li>
@@ -135,6 +145,13 @@ function App() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div>
+            <img 
+              src="./images/lucio.jpg" 
+              alt="Profile"
+              className="rounded-lg shadow-2xl "
+            />
           </div>
         </div>
       </section>
