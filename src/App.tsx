@@ -102,7 +102,7 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
             title="Psychologist Portfolio"
             description="This is my first professional project in CoderCraft: I Designed and developed a Landing Portfolio website for a psychologist made with React, integrating Formspree API for the contact form."
             image="./images/psico.jpg"
-            tech={['React', 'Tailwind CSS']}
+            tech={['HTML', 'Javascript', 'React Vite','Tailwind CSS']}
             demoUrl="https://www.lucianabahr-psico.com/"
             githubUrl="https://github.com/luciomrod/ivon-landing"
           />
@@ -131,17 +131,21 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
               <div className="space-y-2">
                 <h3 className=" text-xl font-semibold">Tech Stack</h3>
                 <ul className="text-zinc-400">
-                  <li>React & Next.js</li>
+                  <li>Next.js</li>
                   <li>TypeScript</li>
-                  <li>Tailwind CSS</li>
+                  <li>React.js</li>
+                  <li>Javascript</li>
+                  <li>Node.js</li>
                 </ul>
               </div>
               <div className="space-y-2">
                 <h3 className="font-semibold">⇲</h3>
                 <ul className="text-zinc-400">
-                  <li>Bootstrap</li>
+                  <li>Redux</li>
+                  <li>Tailwind</li>
+                  <li>MUI</li>
+                  <li>Chakra</li>
                   <li>Shadcn</li>
-                  <li>WordPress</li>
                 </ul>
               </div>
             </div>
@@ -165,7 +169,7 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
           </p>
           <a 
             href="mailto:luciomedinawork@gmail.com"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition-colors "
           >
             Get in Touch
             <Mail size={20} />
@@ -174,7 +178,7 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 text-center text-zinc-500 border-t border-zinc-800">
+      <footer className="py-8 px-4 text-center text-zinc-500 border-t border-zinc-800 max-w-7xl mx-auto">
         <p>© 2024 Lucio Andrés. All rights reserved.</p>
       </footer>
     </div>

@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
 }) => {
   return (
-    <div className="group relative bg-zinc-900 rounded-lg overflow-hidden">
+    <div className="group relative bg-zinc-900 rounded-lg overflow-hidden shadow-lg shadow-purple-500/5">
       <div className="aspect-video overflow-hidden">
         <img
           src={image}
