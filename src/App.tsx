@@ -91,12 +91,12 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
         <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard 
-            title="E-Commerce Platform"
-            description="Designed and developed an e-commerce platform using Bootstrap."
-            image="./images/hardbyte.jpg"
-            tech={['Javascript', 'HTML', 'CSS', 'Bootstrap']}
-            demoUrl="https://hardbyte.vercel.app/index.html"
-            githubUrl="https://github.com/luciomrod/hardbyte"
+            title="FireFlix - Streaming Platform"
+            description="In this project I'm consuming the API from TMDB and using React, Vite, Typescript, Tailwind CSS to perform a website for searching movies and allowing to categorize and filter them, and also add favorites."
+            image="./images/fireflix.jpg"
+            tech={['HTML', 'React Vite', 'Typescript', 'Tailwind CSS']}
+            demoUrl="https://fire-flix-seven.vercel.app/"
+            githubUrl="https://github.com/luciomrod/FireFlix"
           />
           <ProjectCard 
             title="Psychologist Portfolio"
@@ -113,6 +113,14 @@ function AppContent({ contentVisible }: { contentVisible: boolean }) {
             tech={['HTML', 'CSS', 'Bootstrap']}
             demoUrl="https://branca-inmobiliaria.vercel.app/"
             githubUrl="https://github.com/luciomrod/branca-inmobiliaria"
+          />
+          <ProjectCard 
+            title="E-Commerce Platform (Frontend)"
+            description="Designed and developed an e-commerce platform using Bootstrap."
+            image="./images/hardbyte.jpg"
+            tech={['Javascript', 'HTML', 'CSS', 'Bootstrap']}
+            demoUrl="https://hardbyte.vercel.app/index.html"
+            githubUrl="https://github.com/luciomrod/hardbyte"
           />
         </div>
       </section>
